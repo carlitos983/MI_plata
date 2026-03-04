@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>MiPlata – Control de Gastos</title>
-<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --bg: #0d0d0f;
@@ -27,7 +27,7 @@ html, body { height: 100%; overflow: hidden; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Satoshi', sans-serif;
+  font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif;
   font-size: 15px;
   display: flex;
   flex-direction: column;
@@ -39,247 +39,247 @@ body {
 
 /* ── LOGIN ── */
 #loginScreen {
-align-items: center;
-justify-content: center;
-padding: 32px 24px;
-background: radial-gradient(ellipse at 30% 20%, rgba(0,229,160,0.08) 0%, transparent 60%),
-radial-gradient(ellipse at 80% 80%, rgba(0,180,255,0.06) 0%, transparent 50%),
-var(–bg);
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  background: radial-gradient(ellipse at 30% 20%, rgba(0,229,160,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 80%, rgba(0,180,255,0.06) 0%, transparent 50%),
+              var(--bg);
 }
 .login-logo {
-font-family: ‘Clash Display’, sans-serif;
-font-size: 2.8rem;
-font-weight: 700;
-background: linear-gradient(135deg, var(–accent), var(–accent2));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-margin-bottom: 6px;
-text-align: center;
+  font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px;
+  text-align: center;
 }
-.login-sub { color: var(–muted); font-size: 0.88rem; text-align: center; margin-bottom: 40px; }
+.login-sub { color: var(--muted); font-size: 0.88rem; text-align: center; margin-bottom: 40px; }
 
 .login-box { width: 100%; max-width: 380px; }
-.login-tabs { display: flex; background: var(–surface2); border-radius: 10px; padding: 4px; margin-bottom: 24px; }
-.login-tab { flex: 1; padding: 10px; text-align: center; border-radius: 8px; font-weight: 600; font-size: 0.88rem; color: var(–muted); cursor: pointer; transition: all 0.2s; }
-.login-tab.active { background: var(–surface3); color: var(–text); }
+.login-tabs { display: flex; background: var(--surface2); border-radius: 10px; padding: 4px; margin-bottom: 24px; }
+.login-tab { flex: 1; padding: 10px; text-align: center; border-radius: 8px; font-weight: 600; font-size: 0.88rem; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+.login-tab.active { background: var(--accent); color: #0a0a0a; font-weight: 700; }
 
 .users-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
 .user-chip {
-background: var(–surface2);
-border: 1.5px solid var(–border);
-border-radius: 10px;
-padding: 12px 8px;
-text-align: center;
-cursor: pointer;
-transition: all 0.2s;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
 }
-.user-chip:hover, .user-chip.selected { border-color: var(–accent); background: rgba(0,229,160,0.08); }
+.user-chip:hover, .user-chip.selected { border-color: var(--accent); background: rgba(0,229,160,0.08); }
 .user-avatar { font-size: 1.6rem; margin-bottom: 4px; }
-.user-name { font-size: 0.75rem; font-weight: 600; color: var(–muted); }
+.user-name { font-size: 0.75rem; font-weight: 600; color: var(--muted); }
 
 .inp {
-background: var(–surface2);
-border: 1.5px solid var(–border);
-border-radius: 10px;
-color: var(–text);
-font-family: inherit;
-font-size: 1rem;
-padding: 13px 14px;
-width: 100%;
-outline: none;
-margin-bottom: 12px;
-transition: border-color 0.2s;
--webkit-appearance: none;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 13px 14px;
+  width: 100%;
+  outline: none;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
 }
-.inp:focus { border-color: var(–accent); }
-.inp::placeholder { color: var(–muted); }
+.inp:focus { border-color: var(--accent); }
+.inp::placeholder { color: var(--muted); }
 
 .btn {
-background: linear-gradient(135deg, var(–accent), var(–accent2));
-border: none;
-border-radius: 12px;
-color: #0a0a0a;
-cursor: pointer;
-font-family: ‘Clash Display’, sans-serif;
-font-size: 1rem;
-font-weight: 700;
-padding: 15px;
-width: 100%;
-transition: opacity 0.2s, transform 0.1s;
-letter-spacing: 0.3px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+  border-radius: 12px;
+  color: #0a0a0a;
+  cursor: pointer;
+  font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif; letter-spacing: -0.3px;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 15px;
+  width: 100%;
+  transition: opacity 0.2s, transform 0.1s;
+  letter-spacing: 0.3px;
 }
 .btn:active { opacity: 0.85; transform: scale(0.98); }
 .btn.secondary {
-background: var(–surface2);
-color: var(–text);
-border: 1.5px solid var(–border);
+  background: var(--surface2);
+  color: var(--text);
+  border: 1.5px solid var(--border);
 }
-.btn.danger { background: var(–danger); color: white; }
+.btn.danger { background: var(--danger); color: white; }
 .btn.small { padding: 10px 16px; font-size: 0.85rem; width: auto; }
 
 /* ── MAIN APP ── */
-#appScreen { background: var(–bg); }
+#appScreen { background: var(--bg); }
 
 .topbar {
-background: var(–surface);
-border-bottom: 1px solid var(–border);
-padding: 14px 16px 12px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-flex-shrink: 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 16px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
 }
 .topbar-left { display: flex; align-items: center; gap: 10px; }
-.app-title { font-family: ‘Clash Display’, sans-serif; font-size: 1.3rem; font-weight: 700; background: linear-gradient(135deg, var(–accent), var(–accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.user-badge { background: var(–surface2); border: 1px solid var(–border); border-radius: 20px; padding: 4px 10px; font-size: 0.78rem; color: var(–muted); }
+.app-title { font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif; letter-spacing: -0.3px; font-size: 1.3rem; font-weight: 700; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.user-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; font-size: 0.78rem; color: var(--muted); }
 
 /* ── SCROLL AREA ── */
 .scroll-area { flex: 1; overflow-y: auto; padding: 14px 14px 80px; -webkit-overflow-scrolling: touch; }
 
 /* ── MONTH SELECTOR ── */
 .month-bar {
-display: flex;
-align-items: center;
-justify-content: space-between;
-background: var(–surface);
-border-radius: var(–radius);
-padding: 12px 16px;
-margin-bottom: 14px;
-border: 1px solid var(–border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  border: 1px solid var(--border);
 }
-.month-nav { background: none; border: none; color: var(–muted); font-size: 1.3rem; cursor: pointer; padding: 4px 8px; }
-.month-label { font-family: ‘Clash Display’, sans-serif; font-size: 1.05rem; font-weight: 600; }
+.month-nav { background: none; border: none; color: var(--muted); font-size: 1.3rem; cursor: pointer; padding: 4px 8px; }
+.month-label { font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif; letter-spacing: -0.3px; font-size: 1.05rem; font-weight: 600; }
 
 /* ── SUELDO CARD ── */
 .sueldo-card {
-background: linear-gradient(135deg, rgba(0,229,160,0.12), rgba(0,180,255,0.08));
-border: 1px solid rgba(0,229,160,0.25);
-border-radius: var(–radius);
-padding: 18px;
-margin-bottom: 14px;
-position: relative;
-overflow: hidden;
+  background: linear-gradient(135deg, rgba(0,229,160,0.12), rgba(0,180,255,0.08));
+  border: 1px solid rgba(0,229,160,0.25);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
 }
 .sueldo-card::before {
-content: ‘’;
-position: absolute;
-top: -30px; right: -30px;
-width: 100px; height: 100px;
-background: radial-gradient(circle, rgba(0,229,160,0.15), transparent 70%);
+  content: '';
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 100px; height: 100px;
+  background: radial-gradient(circle, rgba(0,229,160,0.15), transparent 70%);
 }
-.sueldo-label { font-size: 0.72rem; color: var(–accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-.sueldo-amount { font-family: ‘Clash Display’, sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
+.sueldo-label { font-size: 0.72rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.sueldo-amount { font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif; letter-spacing: -0.3px; font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
 .sueldo-bar-wrap { background: rgba(255,255,255,0.08); border-radius: 99px; height: 7px; margin-bottom: 8px; }
-.sueldo-bar { background: linear-gradient(90deg, var(–accent), var(–accent2)); border-radius: 99px; height: 100%; transition: width 0.6s cubic-bezier(0.34,1.56,0.64,1); }
+.sueldo-bar { background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 99px; height: 100%; transition: width 0.6s cubic-bezier(0.34,1.56,0.64,1); }
 .sueldo-meta { display: flex; justify-content: space-between; font-size: 0.78rem; }
-.sueldo-meta span { color: var(–muted); }
-.sueldo-meta strong { color: var(–text); }
-.edit-sueldo { position: absolute; top: 14px; right: 14px; background: rgba(255,255,255,0.07); border: none; border-radius: 8px; color: var(–muted); font-size: 0.9rem; cursor: pointer; padding: 5px 10px; }
+.sueldo-meta span { color: var(--muted); }
+.sueldo-meta strong { color: var(--text); }
+.edit-sueldo { position: absolute; top: 14px; right: 14px; background: rgba(255,255,255,0.07); border: none; border-radius: 8px; color: var(--muted); font-size: 0.9rem; cursor: pointer; padding: 5px 10px; }
 
 /* ── STATS GRID ── */
 .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
-.stat-card { background: var(–surface); border: 1px solid var(–border); border-radius: var(–radius); padding: 14px; }
-.stat-label { font-size: 0.7rem; color: var(–muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
-.stat-value { font-family: ‘Clash Display’, sans-serif; font-size: 1.3rem; font-weight: 600; }
-.stat-value.danger { color: var(–danger); }
-.stat-value.warn { color: var(–warn); }
-.stat-value.good { color: var(–accent); }
-.stat-sub { font-size: 0.72rem; color: var(–muted); margin-top: 3px; }
+.stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
+.stat-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.stat-value { font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif; letter-spacing: -0.3px; font-size: 1.3rem; font-weight: 600; }
+.stat-value.danger { color: var(--danger); }
+.stat-value.warn { color: var(--warn); }
+.stat-value.good { color: var(--accent); }
+.stat-sub { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
 
 /* ── CHART ── */
-.chart-card { background: var(–surface); border: 1px solid var(–border); border-radius: var(–radius); padding: 16px; margin-bottom: 14px; }
-.card-title { font-family: ‘Clash Display’, sans-serif; font-size: 0.9rem; font-weight: 600; color: var(–muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; }
+.chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 14px; }
+.card-title { font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif; letter-spacing: -0.3px; font-size: 0.9rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; }
 .chart-wrap { display: flex; align-items: center; gap: 16px; }
 canvas#pieChart { flex-shrink: 0; }
 .legend { flex: 1; display: flex; flex-direction: column; gap: 7px; }
 .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; }
 .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-.legend-name { flex: 1; color: var(–muted); }
-.legend-val { font-weight: 700; color: var(–text); }
-.legend-pct { font-size: 0.72rem; color: var(–muted2); }
+.legend-name { flex: 1; color: var(--muted); }
+.legend-val { font-weight: 700; color: var(--text); }
+.legend-pct { font-size: 0.72rem; color: var(--muted2); }
 
 /* ── COMPARACION ── */
-.compare-card { background: var(–surface); border: 1px solid var(–border); border-radius: var(–radius); padding: 16px; margin-bottom: 14px; }
+.compare-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 14px; }
 .compare-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 0.85rem; }
-.compare-label { width: 90px; color: var(–muted); font-size: 0.78rem; flex-shrink: 0; }
-.compare-bar-wrap { flex: 1; background: var(–surface3); border-radius: 99px; height: 8px; }
+.compare-label { width: 90px; color: var(--muted); font-size: 0.78rem; flex-shrink: 0; }
+.compare-bar-wrap { flex: 1; background: var(--surface3); border-radius: 99px; height: 8px; }
 .compare-bar { height: 100%; border-radius: 99px; transition: width 0.5s; }
 .compare-amt { width: 70px; text-align: right; font-weight: 600; font-size: 0.82rem; flex-shrink: 0; }
 
 /* ── GASTOS LIST ── */
 .gastos-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-.gastos-header h3 { font-family: ‘Clash Display’, sans-serif; font-size: 0.9rem; color: var(–muted); text-transform: uppercase; letter-spacing: 0.8px; }
+.gastos-header h3 { font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif; letter-spacing: -0.3px; font-size: 0.9rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; }
 
 .gasto-item {
-background: var(–surface);
-border: 1px solid var(–border);
-border-radius: 12px;
-padding: 13px 14px;
-margin-bottom: 8px;
-display: flex;
-align-items: center;
-gap: 12px;
-position: relative;
-transition: transform 0.15s;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 13px 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  transition: transform 0.15s;
 }
 .gasto-item:active { transform: scale(0.98); }
 .gasto-icon { font-size: 1.5rem; flex-shrink: 0; }
 .gasto-info { flex: 1; min-width: 0; }
 .gasto-desc { font-weight: 600; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.gasto-meta { font-size: 0.75rem; color: var(–muted); margin-top: 2px; }
-.gasto-cat { display: inline-block; background: var(–surface3); border-radius: 99px; padding: 1px 8px; font-size: 0.68rem; margin-right: 4px; }
-.gasto-amount { font-family: ‘Clash Display’, sans-serif; font-size: 1.05rem; font-weight: 700; color: var(–danger); flex-shrink: 0; }
-.gasto-del { background: none; border: none; color: var(–muted2); font-size: 1rem; cursor: pointer; padding: 4px 6px; }
-.empty-msg { text-align: center; color: var(–muted); padding: 30px 0; font-size: 0.9rem; }
+.gasto-meta { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+.gasto-cat { display: inline-block; background: var(--surface3); border-radius: 99px; padding: 1px 8px; font-size: 0.68rem; margin-right: 4px; }
+.gasto-amount { font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif; letter-spacing: -0.3px; font-size: 1.05rem; font-weight: 700; color: var(--danger); flex-shrink: 0; }
+.gasto-del { background: none; border: none; color: var(--muted2); font-size: 1rem; cursor: pointer; padding: 4px 6px; }
+.empty-msg { text-align: center; color: var(--muted); padding: 30px 0; font-size: 0.9rem; }
 
 /* ── ADD GASTO PANEL ── */
 .fab {
-position: fixed;
-bottom: 20px; right: 20px;
-width: 58px; height: 58px;
-border-radius: 50%;
-background: linear-gradient(135deg, var(–accent), var(–accent2));
-border: none;
-font-size: 1.6rem;
-color: #0a0a0a;
-cursor: pointer;
-box-shadow: 0 4px 20px rgba(0,229,160,0.35);
-display: flex; align-items: center; justify-content: center;
-transition: transform 0.2s;
-z-index: 50;
+  position: fixed;
+  bottom: 20px; right: 20px;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+  font-size: 1.6rem;
+  color: #0a0a0a;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,229,160,0.35);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.2s;
+  z-index: 50;
 }
 .fab:active { transform: scale(0.92); }
 
 .sheet-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100; align-items: flex-end; justify-content: center; }
 .sheet-overlay.show { display: flex; }
-.sheet { background: var(–surface); border-radius: 20px 20px 0 0; padding: 20px 18px 36px; width: 100%; max-width: 500px; }
-.sheet-handle { width: 36px; height: 4px; background: var(–border); border-radius: 99px; margin: 0 auto 18px; }
-.sheet h2 { font-family: ‘Clash Display’, sans-serif; font-size: 1.2rem; margin-bottom: 16px; }
+.sheet { background: var(--surface); border-radius: 20px 20px 0 0; padding: 20px 18px 36px; width: 100%; max-width: 500px; }
+.sheet-handle { width: 36px; height: 4px; background: var(--border); border-radius: 99px; margin: 0 auto 18px; }
+.sheet h2 { font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif; letter-spacing: -0.3px; font-size: 1.2rem; margin-bottom: 16px; }
 
 .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
 .cat-btn {
-background: var(–surface2);
-border: 1.5px solid var(–border);
-border-radius: 10px;
-padding: 10px 4px;
-text-align: center;
-cursor: pointer;
-transition: all 0.15s;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
 }
-.cat-btn.selected { border-color: var(–accent); background: rgba(0,229,160,0.1); }
+.cat-btn.selected { border-color: var(--accent); background: rgba(0,229,160,0.1); }
 .cat-btn .ci { font-size: 1.3rem; }
-.cat-btn .cn { font-size: 0.65rem; color: var(–muted); margin-top: 3px; font-weight: 600; }
+.cat-btn .cn { font-size: 0.65rem; color: var(--muted); margin-top: 3px; font-weight: 600; }
 
 /* ── MODAL ── */
 .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 200; align-items: center; justify-content: center; padding: 20px; }
 .modal-overlay.show { display: flex; }
-.modal { background: var(–surface); border-radius: 16px; padding: 24px; width: 100%; max-width: 360px; }
-.modal h3 { font-family: ‘Clash Display’, sans-serif; font-size: 1.1rem; margin-bottom: 16px; }
+.modal { background: var(--surface); border-radius: 16px; padding: 24px; width: 100%; max-width: 360px; }
+.modal h3 { font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif; letter-spacing: -0.3px; font-size: 1.1rem; margin-bottom: 16px; }
 .modal-btns { display: flex; gap: 10px; margin-top: 16px; }
 
 /* ── TOAST ── */
-.toast { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(60px); background: var(–surface3); border: 1px solid var(–border); color: var(–text); padding: 11px 22px; border-radius: 99px; font-size: 0.88rem; font-weight: 600; transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1); z-index: 300; white-space: nowrap; }
+.toast { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(60px); background: var(--surface3); border: 1px solid var(--border); color: var(--text); padding: 11px 22px; border-radius: 99px; font-size: 0.88rem; font-weight: 600; transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1); z-index: 300; white-space: nowrap; }
 .toast.show { transform: translateX(-50%) translateY(0); }
 </style>
 
@@ -462,10 +462,10 @@ var selectedUserChip = null;
 
 // ── STORAGE HELPERS ──────────────────────────────────────────────────────────
 function loadData() {
-  try { return JSON.parse(localStorage.getItem('miplata_v2') || '{}'); } catch(e) { return {}; }
+  try { return JSON.parse(localStorage.getItem('miplata_gastos_v3') || '{}'); } catch(e) { return {}; }
 }
 function saveData(data) {
-  localStorage.setItem('miplata_v2', JSON.stringify(data));
+  localStorage.setItem('miplata_gastos_v3', JSON.stringify(data));
 }
 function getUserData(uid) {
   var d = loadData();
@@ -518,6 +518,7 @@ function loginSelected() {
     if (pin !== udata.pin) { showToast('PIN incorrecto'); return; }
   }
   currentUser = selectedUserChip;
+  sessionStorage.setItem('miplata_session', currentUser);
   enterApp();
 }
 
@@ -532,10 +533,12 @@ function createUser() {
   d.users[uid] = { name: name, gastos: {}, sueldos: {}, pin: pin };
   saveData(d);
   currentUser = uid;
+  sessionStorage.setItem('miplata_session', currentUser);
   enterApp();
 }
 
 function logout() {
+  sessionStorage.removeItem('miplata_session');
   currentUser = null;
   selectedUserChip = null;
   document.getElementById('newName').value = '';
@@ -849,6 +852,16 @@ function showToast(msg) {
 // ── INIT ─────────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', function() {
   renderUsersGrid();
+  // Try to restore session from sessionStorage
+  var savedUser = sessionStorage.getItem('miplata_session');
+  if (savedUser) {
+    var d = loadData();
+    if (d.users && d.users[savedUser]) {
+      currentUser = savedUser;
+      enterApp();
+      return;
+    }
+  }
 
   // Close sheet on overlay click
   document.getElementById('sheetOverlay').addEventListener('click', function(e) {
